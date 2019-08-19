@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+.formApp {
+  margin-top: 10em;
+}
+
+.inputForm {
+  margin: 0 auto 1em;;
+}
