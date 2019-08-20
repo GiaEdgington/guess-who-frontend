@@ -9,7 +9,7 @@ import Input from '../components/Input';
 export default class GameBoard extends React.Component {
 
     render(){
-        console.log(this.props)
+        console.log(this.props.filterType)
         return(
             <div>
                 <Score />

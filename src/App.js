@@ -9,7 +9,8 @@ import GameBoard from './containers/GameBoard'
 class App extends React.Component {
 
   state ={
-    allCards: []
+    allCards: [],
+    filterType: ""
   }
 
   componentDidMount(){
@@ -18,7 +19,14 @@ class App extends React.Component {
     .then(data => this.setState({allCards: data}))
   }
 
+  changeFilterTypeState = (e) => {
+    this.setState({
+      filterType: e.target.id
+    })
+  }
+
   render (){
+    console.log(this.state.filterType)
     return(
       <BrowserRouter>
       <Switch>
@@ -29,11 +37,11 @@ class App extends React.Component {
         />
         <Route 
           path="/sidebar" 
-          render={(routerProps)=> <SideBar {...routerProps} />} 
+          render={(routerProps)=> <SideBar {...routerProps} changeFilterTypeState={this.changeFilterTypeState}/>} 
         />
         <Route 
           path="/game_board" 
-          render={(routerProps)=> <GameBoard {...routerProps} allCards={this.state.allCards}/>}
+          render={(routerProps)=> <GameBoard {...routerProps} allCards={this.state.allCards} filterType={this.state.filterType}/>}
         />
     </Switch>
     </BrowserRouter>

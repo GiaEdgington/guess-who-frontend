@@ -4,10 +4,9 @@ import Filters from '../components/Filters';
 export default class SideBar extends React.Component {
 
     render(){
-        
         return(
             <div>
-                <Filters />
+                <Filters changeFilterTypeState={this.props.changeFilterTypeState}/>
             </div>
         )
     }
