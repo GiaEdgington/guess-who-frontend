@@ -9,13 +9,13 @@ import Input from '../components/Input';
 export default class GameBoard extends React.Component {
 
     render(){
-
+        console.log(this.props)
         return(
             <div>
                 <Score />
                 <Timer />
                 <Hint />
-                <ImageContainer />
+                <ImageContainer allCards={this.props.allCards}/>
                 <Input />
                 hello there!
             </div>

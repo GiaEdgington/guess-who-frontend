@@ -8,8 +8,17 @@ import GameBoard from './containers/GameBoard'
 
 class App extends React.Component {
 
-  render (){
+  state ={
+    allCards: []
+  }
 
+  componentDidMount(){
+    fetch('http://localhost:3000/people_cards')
+    .then(response => response.json())
+    .then(data => this.setState({allCards: data}))
+  }
+
+  render (){
     return(
       <BrowserRouter>
       <Switch>
@@ -17,9 +26,15 @@ class App extends React.Component {
           exact
           path="/"
           render={(routerProps)=> <Homepage  {...routerProps}/>}
-           />
-          <Route path="/sidebar" component={SideBar}/>
-          <Route path="/game_board" component={GameBoard}/>
+        />
+        <Route 
+          path="/sidebar" 
+          render={(routerProps)=> <SideBar {...routerProps} />} 
+        />
+        <Route 
+          path="/game_board" 
+          render={(routerProps)=> <GameBoard {...routerProps} allCards={this.state.allCards}/>}
+        />
     </Switch>
     </BrowserRouter>
     )
@@ -28,3 +43,5 @@ class App extends React.Component {
 
 
 export default App;
+
+  

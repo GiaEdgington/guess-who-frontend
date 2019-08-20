@@ -3,10 +3,10 @@ import React from 'react';
 export default class Image extends React.Component {
 
     render(){
-
+        console.log(this.props)
         return(
             <div>
-                I'm an Image
+                <img src={this.props.image}/>
             </div>
         )
     }
