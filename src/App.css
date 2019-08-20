@@ -54,3 +54,23 @@ li {
   background-color: #92a2a3;
   color: white;
 }
+
+.timer {
+  display: block;
+  text-align: center;
+  margin: -5em auto 0;
+  width: 60px;
+  border: 1px solid black;
+}
+
+.hint {
+  float: right;
+  border: 1px solid black;
+  padding: .5em;
+  margin:15em -7em 0;
+}
+
+.score {
+  float: right;
+  margin: 4em 10em 0 0;
+}

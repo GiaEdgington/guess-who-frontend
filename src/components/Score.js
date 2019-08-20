@@ -5,8 +5,8 @@ export default class Score extends React.Component {
     render(){
 
         return(
-            <div>
-                I'm the score
+            <div className="score">
+                MY SCORE:
             </div>
         )
     }
