@@ -1,10 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-import Homepage from './containers/Homepage'
-import SideBar from './containers/SideBar'
-import GameBoard from './containers/GameBoard'
+import Homepage from './containers/Homepage';
+import GameContainer from './containers/GameContainer';
 
 class App extends React.Component {
 
@@ -34,13 +33,9 @@ class App extends React.Component {
           path="/"
           render={(routerProps)=> <Homepage  {...routerProps}/>}
         />
-        <Route 
-          path="/sidebar" 
-          render={(routerProps)=> <SideBar {...routerProps} changeFilterTypeState={this.changeFilterTypeState}/>} 
-        />
-        <Route 
-          path="/game_board" 
-          render={(routerProps)=> <GameBoard {...routerProps} allCards={this.state.allCards} filterType={this.state.filterType}/>}
+        <Route
+          path="/game_board"
+          render={(routerProps)=> <GameContainer {...routerProps} changeFilterTypeState={this.changeFilterTypeState} allCards={this.state.allCards}/>}
         />
     </Switch>
     </BrowserRouter>
@@ -50,5 +45,3 @@ class App extends React.Component {
 
 
 export default App;
-
-  

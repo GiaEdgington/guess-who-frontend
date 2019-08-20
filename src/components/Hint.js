@@ -5,7 +5,7 @@ export default class Hint extends React.Component {
     render(){
 
         return(
-            <div>
+            <div className="hint">
                 I'm a hint
             </div>
         )
