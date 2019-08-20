@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Filters extends React.Component {
 
@@ -11,6 +12,7 @@ export default class Filters extends React.Component {
                   <li>Mod 2</li>
                   <li>Mod 3</li>
                   <li>Mod 4</li>
+                  <Link to="/game_board"><button>Start Game</button> </Link>
                 </ul>
             </div>
         )

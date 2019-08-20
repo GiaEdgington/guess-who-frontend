@@ -1,5 +1,5 @@
 import React from 'react';
-import Filters from '../components/Filters'
+import Filters from '../components/Filters';
 
 export default class SideBar extends React.Component {
 
@@ -8,7 +8,6 @@ export default class SideBar extends React.Component {
         return(
             <div>
                 <Filters />
-                <button>Start Game</button>    
             </div>
         )
     }
