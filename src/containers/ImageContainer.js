@@ -1,21 +1,24 @@
 import React, { Component } from "react";
 import Image from '../components/Image';
 
-export default class Homepage extends Component {
+export default class ImageContainer extends Component {
 
-    // makeInstructorCards = () => {
-    //     let allCards = this.props.allCards
-    //     return allCards.filter(card => {
-    //         card.filter === "instructor" 
-    //         return <Image image={card.image}/>
-    //     })
-    // }
+  imageSource = (name) => {
+    return require(`../images/instructors/${name}.jpg`)
+  }
+
+  makeImageCard = () => {
+    let filtered = this.props.allCards.filter(card => card.filter === 'instructor')
+    return filtered.map(card => <Image key={`${card.answer} ${card.id}`} imageSource={this.imageSource(card.answer)}/>)
+  }
 
   render(){
+
     return(
       <div>
-        {/* {this.makeInstructorCards()} */}
+        {this.makeImageCard()}
       </div>
     )
   }
 }
+
