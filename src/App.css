@@ -39,3 +39,18 @@
 .inputForm {
   margin: 0 auto 1em;;
 }
+
+li {
+  list-style-type: none;
+}
+
+.filters {
+  width: 9%;
+}
+
+.filters li {
+  padding: .35em;
+  margin-bottom: 2px;
+  background-color: #92a2a3;
+  color: white;
+}
