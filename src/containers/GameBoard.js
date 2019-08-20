@@ -9,15 +9,15 @@ import Input from '../components/Input';
 export default class GameBoard extends React.Component {
 
     render(){
-        console.log(this.props.filterType)
+        //console.log(this.props)
         return(
             <div>
                 <Score />
-                <Timer />
+                <Timer seconds={this.props.seconds}/>
                 <Hint />
-                <ImageContainer allCards={this.props.allCards}/>
+                <ImageContainer allCards={this.props.allCards} filterType={this.props.filterType}/>
                 <Input />
-                hello there!
+                <button style={{ fontSice:300}} onClick={this.props.handleTimer}>START GAME</button>
             </div>
         )
     }
