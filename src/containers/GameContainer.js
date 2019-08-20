@@ -9,13 +9,12 @@ export default class GameContainer extends React.Component {
    }
 
    intervalHandle;
-   secondsRemaining;
+   //secondsRemaining;
 
 
    tick = () => {
-     let secondsRemaining = this.state.seconds--
        this.setState({
-           seconds: secondsRemaining
+           seconds: this.state.seconds--
        })
 
        if (this.state.seconds === 0) {  //this.seconds? anyway, however you get the state value. same with the above seconds-- line
@@ -33,8 +32,8 @@ export default class GameContainer extends React.Component {
        //console.log(this.props)
        return (
            <React.Fragment>
-           <SideBar changeFilterTypeState= { this.props.changeFilterTypeState } />
-           <GameBoard allCards={ this.props.allCards } handleTimer = { this.handleTimer } seconds = { this.state.seconds } />
-               </React.Fragment>
+             <SideBar changeFilterTypeState= { this.props.changeFilterTypeState } />
+             <GameBoard allCards={ this.props.allCards } handleTimer = { this.handleTimer } seconds = { this.state.seconds }/>
+           </React.Fragment>
        )}
 }
