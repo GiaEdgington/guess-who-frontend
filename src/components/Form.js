@@ -5,7 +5,8 @@ class Form extends React.Component {
   state={
     username:"",
     password:"",
-    currentHomepage: "registration"
+    currentHomepage: "Registration",
+    currentUser: ""
   }
 
   handleUsername = (username) => {
@@ -17,12 +18,29 @@ class Form extends React.Component {
   }
 
   handleClick = () => {
-    this.setState({ currentHomepage: "login"})
+    if (this.state.currentHomepage === "Registration") {
+      this.setState({ currentHomepage: "Login" })
+    } else {
+      this.setState({ currentHomepage: "Registration" })
+    }
   }
 
   handleLogin = (e) => {
     e.preventDefault()
-    //console.log('test')
+    fetch('http://localhost:3000/users')
+    .then(response => response.json())
+    .then(this.setCurrentUser)
+  }
+
+  setCurrentUser = (data) => {
+    // console.log('username: ', this.state.username)
+    // console.log('password: ', this.state.password)
+    // console.log(data)
+    // console.log(data.find(user => user.username === this.state.username))
+    let user = data.find(user => user.username === this.state.username)
+    if (user && this.state.password !== "") {
+      this.setState({currentUser: user.username})
+    }
   }
 
   handleSubmit = (e) => {
@@ -42,19 +60,19 @@ class Form extends React.Component {
   }
 
   render() {
-
+    console.log(this.state.currentUser)
     return(
       <div>
       <form className="formApp" onSubmit={this.handleSubmit}>
-      <h3>Register</h3>
+      <h3>{this.state.currentHomepage}</h3>
             <label>Username:<input className="inputForm" type="text" value={this.state.username} onChange={(e) => this.handleUsername(e.target.value)} style={{ display:"block" }}/></label>
-            <label>Password:<input className="inputForm" type="text" value={this.state.password} onChange={(e) => this.handlePassword(e.target.value)} style={{ display:"block"}}/></label>
+            <label>Password:<input className="inputForm" type="password" value={this.state.password} onChange={(e) => this.handlePassword(e.target.value)} style={{ display:"block"}}/></label>
             {
-              this.state.currentHomepage === 'registration'
+              this.state.currentHomepage === 'Registration'
               ?
-            <input type="submit" value="Submit" onClick={this.handleSubmit}/>
+              <input type="submit" value="Submit" onClick={this.handleSubmit}/>
               :
-            <input type="submit" value="Submit" onClick={this.handleLogin}/>
+              <input type="submit" value="Submit" onClick={this.handleLogin}/>
             }
             <p onClick={this.handleClick}>Or Sign in here</p>
         </form>
