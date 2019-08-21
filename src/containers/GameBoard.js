@@ -15,9 +15,9 @@ export default class GameBoard extends React.Component {
                 <Score />
                 <Timer seconds={this.props.seconds}/>
                 <Hint />
-                <ImageContainer allCards={this.props.allCards} filterType={this.props.filterType}/>
+                <ImageContainer allCards={this.props.allCards} filterType={this.props.filterType} className={this.props.className} />
                 <Input />
-                <button className="btnStart" style={{ fontSice:300}} onClick={this.props.handleTimer}>START GAME</button>
+                <button className="btnStart" style={{ fontSice:300}} onClick={(event) => {this.props.handleTimer(); this.props.handleImage()}}>START GAME</button>
             </div>
         )
     }

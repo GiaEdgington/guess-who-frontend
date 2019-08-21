@@ -15,7 +15,7 @@ export default class ImageContainer extends Component {
 
     return(
       <div>
-        <Image />
+        <Image className={this.props.className} />
         {/* {this.makeImageCard()} */}
       </div>
     )

@@ -5,7 +5,8 @@ import GameBoard from './GameBoard'
 export default class GameContainer extends React.Component {
 
    state = {
-       seconds: 0
+       seconds: 0,
+       className: "layer"
    }
 
    intervalHandle;
@@ -29,13 +30,21 @@ export default class GameContainer extends React.Component {
      }
    }
 
+   noDisplayImg = () => {
+     this.setState({ className: "noImage"})
+   }
+
+   handleImage =() => {
+     setTimeout(this.noDisplayImg, 1500)
+   }
+
 
    render() {
        console.log(this.state.seconds)
        return (
            <React.Fragment>
               <SideBar changeFilterTypeState= { this.props.changeFilterTypeState } />
-              <GameBoard allCards={ this.props.allCards } handleTimer = { this.handleTimer } seconds = { this.state.seconds } />
+              <GameBoard allCards={ this.props.allCards } handleTimer = { this.handleTimer } handleImage={this.handleImage} seconds = { this.state.seconds} className={this.state.className} />
            </React.Fragment>
        )}
 }
