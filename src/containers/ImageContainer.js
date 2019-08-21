@@ -15,9 +15,9 @@ export default class ImageContainer extends Component {
 
     return(
       <div>
-        {this.makeImageCard()}
+        <Image />
+        {/* {this.makeImageCard()} */}
       </div>
     )
   }
 }
-

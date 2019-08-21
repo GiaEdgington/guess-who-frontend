@@ -6,8 +6,8 @@ export default class Input extends React.Component {
 
         return(
             <div>
-                <input>
-                    
+                <input className="input">
+
                 </input>
             </div>
         )

@@ -46,6 +46,7 @@ li {
 
 .filters {
   width: 9%;
+  margin: 5em 0 0;
 }
 
 .filters li {
@@ -73,4 +74,34 @@ li {
 .score {
   float: right;
   margin: 4em 10em 0 0;
+}
+
+.btnStart {
+  font-weight:bolder;
+  font-size:.75em;
+  width: 12em;
+  padding: 1.5em;
+  margin-left: 3em;
+}
+
+.image {
+  position: relative;
+  left: 35%;
+  top: 3em;
+  width: 30%;
+}
+
+.layer{
+  position: absolute;
+  left: 35%;
+  top: 10.3em;
+  width: 30%;
+  z-index: 5;
+}
+
+.input {
+  width: 20em;
+  margin-top: 6em;
+  margin-left: 40%;
+  padding: .75em;
 }
