@@ -102,6 +102,14 @@ li {
 .input {
   width: 20em;
   margin-top: 6em;
-  margin-left: 40%;
+  margin-left: 38%;
   padding: .75em;
+}
+
+.noImage {
+  display: none;
+}
+
+.displayImage {
+  display: block;
 }
