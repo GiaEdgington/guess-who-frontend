@@ -7,12 +7,10 @@ export default class Input extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.getInput(this.props.input)
-        // this.props.setScore()
+        this.props.clearInputAfterSubmit()
     }
 
     render(){
-        // console.log(this.state.input)
-        // console.log('input', this.props.seconds)
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
