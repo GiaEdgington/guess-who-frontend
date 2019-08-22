@@ -9,13 +9,14 @@ class App extends React.Component {
 
   state ={
     allCards: [],
-    filterType: ""
+    filterType: "",
+    dataInstructors: []
   }
 
   componentDidMount(){
     fetch('http://localhost:3000/people_cards')
     .then(response => response.json())
-    .then(data => this.setState({allCards: data}))
+    .then(data => this.setState({allCards: data, dataInstructors: data.filter((instructor) => instructor.filter == "instructor")}))
   }
 
   changeFilterTypeState = (e) => {
@@ -35,13 +36,16 @@ class App extends React.Component {
         />
         <Route
           path="/game_board"
-          render={(routerProps)=> <GameContainer {...routerProps} changeFilterTypeState={this.changeFilterTypeState} allCards={this.state.allCards}/>}
+          render={(routerProps)=> <GameContainer {...routerProps}
+            changeFilterTypeState={this.changeFilterTypeState}
+            allCards={this.state.allCards}
+            instructors={this.state.dataInstructors}/>
+          }
         />
     </Switch>
     </BrowserRouter>
     )
   }
 }
-
 
 export default App;

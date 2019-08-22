@@ -6,12 +6,12 @@ export default class Score extends React.Component {
         score: 0
     }
 
-   
+
     render(){
-        console.log('score component: ', this.props.seconds)
-        console.log(this.state.score)
+        //console.log('score component: ', this.props.seconds)
+        //console.log(this.state.score)
         return(
-            <div className="score">           
+            <div className="score">
                 MY SCORE: {this.props.seconds}
             </div>
         )
