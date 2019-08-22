@@ -9,7 +9,10 @@ export default class ImageContainer extends Component {
 
   makeImageCard = () => {
     let filtered = this.props.allCards.filter(card => card.filter === 'instructor')
-    return filtered.map(card => <Image key={`${card.answer} ${card.id}`} imageSource={this.imageSource(card.answer)}/>)
+    return filtered.map(card => <Image key={`${card.answer} ${card.id}`} 
+                                       imageSource={this.imageSource(card.answer)}
+                                       setAnswer={this.props.setAnswer}
+                                />)
   }
   render(){
 

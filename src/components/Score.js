@@ -2,11 +2,17 @@ import React from 'react';
 
 export default class Score extends React.Component {
 
-    render(){
+    state = {
+        score: 0
+    }
 
+   
+    render(){
+        console.log('score component: ', this.props.seconds)
+        console.log(this.state.score)
         return(
-            <div className="score">
-                MY SCORE:
+            <div className="score">           
+                MY SCORE: {this.props.seconds}
             </div>
         )
     }
