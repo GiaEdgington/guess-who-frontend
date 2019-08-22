@@ -2,23 +2,11 @@ import React from 'react';
 
 export default class Input extends React.Component {
 
-    state = {
-        input: "",
 
-    }
-
-    handleChange = (event) => {
-        // console.log(event.target.value)
-        if (this.props.seconds !== 0) {
-            this.setState({
-                input: event.target.value
-            })
-        }
-    }
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.getInput(this.state.input)
+        this.props.getInput(this.props.input)
         // this.props.setScore()
     }
 
@@ -28,7 +16,7 @@ export default class Input extends React.Component {
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input className="input" value={this.state.input} onChange={this.handleChange}/>
+                    <input className="input" value={this.props.input} onChange={(event) => this.props.handleChange(event.target.value)}/>
                 </form>
             </div>
         )
