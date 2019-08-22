@@ -46,6 +46,7 @@ li {
 
 .filters {
   width: 9%;
+  font-size: 1.3em;
   margin: 5em 0 0;
 }
 
@@ -56,32 +57,57 @@ li {
   color: white;
 }
 
+.filters li:hover {
+  background-color: #c1c5c5;
+}
+
 .timer {
   display: block;
   text-align: center;
-  margin: -5em auto 0;
+  font-size: 2em;
+  font-weight: bolder;
+  line-height: 1.9em;
+  margin: -8em auto 0;
   width: 60px;
-  border: 1px solid black;
+  height: 60px;
+  border: 3px solid black;
 }
 
 .hint {
   float: right;
-  border: 1px solid black;
-  padding: .5em;
-  margin:15em -7em 0;
+  width: 4em;
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: 900;
+  background-color: #00b3e9;
+  color: white;
+  border: none;
+  padding: .7em;
+  margin:10em -4em 0;
 }
 
 .score {
   float: right;
-  margin: 4em 10em 0 0;
+  width: 7em;
+  margin: 4em 6em 0 0;
+  font-weight: bolder;
+  border: 1px black solid;
+  padding: 1em;
 }
 
 .btnStart {
   font-weight:bolder;
-  font-size:.75em;
-  width: 12em;
-  padding: 1.5em;
-  margin-left: 3em;
+  color: white;
+  background-color: #e97e00;
+  font-size: 1.2em;
+  width: 9em;
+  padding: 0.75em;
+  margin-top: 14em;
+  margin-left: 2em;
+}
+
+.btnStart:hover {
+  background-color:#efad1f;
 }
 
 .image {
@@ -102,14 +128,6 @@ li {
 .input {
   width: 20em;
   margin-top: 6em;
-  margin-left: 38%;
+  margin-left: 40%;
   padding: .75em;
-}
-
-.noImage {
-  display: none;
-}
-
-.displayImage {
-  display: block;
 }

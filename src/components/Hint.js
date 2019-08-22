@@ -6,7 +6,7 @@ export default class Hint extends React.Component {
 
         return(
             <div className="hint">
-                I'm a hint
+                HINT
             </div>
         )
     }
