@@ -20,7 +20,7 @@ export default class Image extends React.Component {
     let alls = [Layer5,Layer4,Layer3,Layer2,Layer1,Layer0];
     for (let i=0; i < alls.length; i++) {
       this.handleLayer(alls[i]);
-      sleep(1000);
+    //   sleep(1000);
     }
   }
   handleLayer = (stuff) =>
