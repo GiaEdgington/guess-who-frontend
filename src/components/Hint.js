@@ -2,11 +2,19 @@ import React from 'react';
 
 export default class Hint extends React.Component {
 
-    render(){
+  hints = () => {
+    return this.props.instructors.map(instructor => instructor.hint)
 
+  }
+
+    render(){
+      console.log(this.hints())
         return(
-            <div className="hint">
-                HINT
+            <div >
+                <h2 className="hint">HINT</h2>
+                <div className="about">
+                  <p>{this.hints()[this.props.hintIndex]}</p>
+                </div>
             </div>
         )
     }

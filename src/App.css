@@ -131,3 +131,20 @@ li {
   margin-left: 40%;
   padding: .75em;
 }
+
+.about {
+  float: right;
+  background-color: white;
+  text-align: center;
+  margin-top:17em;
+  margin-right:-9em;
+  width: 14em;
+  height: 5em;
+  border: 1px black solid;
+}
+
+.about p {
+  margin-top: 1.35em;
+  font-weight: bolder;
+  font-size: 1.2em;
+}

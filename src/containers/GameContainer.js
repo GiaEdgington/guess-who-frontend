@@ -87,8 +87,9 @@ export default class GameContainer extends React.Component {
                 gameState = {this.gameInSession}
                 index = {this.state.index}
                 indexImg = {this.state.indexImg}
-                instructors={this.props.dataInstructors}
+                instructors={this.props.instructors}
                 answer={this.state.answer}
+                hintIndex={this.state.indexImg}
               />
            </React.Fragment>
        )}
